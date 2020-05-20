@@ -1,0 +1,20 @@
+a{
+color:#26B4D1;
+}
+#link1{
+color:#D0E5D9;
+}
+#link2{
+color:#D0E5D9;
+}
+.img1,.img2,.img3{
+height:270px;
+width:350px;
+font-style: oblique;
+}
+#p1,#p2{
+font-family: "Lucida Console", Courier, monospace;
+font-weight:700;
+}
+
+
