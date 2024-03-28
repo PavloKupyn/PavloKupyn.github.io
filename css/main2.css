@@ -240,3 +240,10 @@ hr
  text-align: left;
  margin-left: 0
 }
+.console
+{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
