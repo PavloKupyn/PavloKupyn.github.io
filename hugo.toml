@@ -11,7 +11,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
   description = "Pavlo Kupyn, Master's student in Mobile Robotics at the University of Bonn, working on machine learning for robotics."
 
   [params.socials]
-    email = "pkupyn@uni-bonn.de"
+    # Your profile URL, e.g. "https://scholar.google.com/citations?user=XXXXXXXX" (icon is hidden while empty)
+    scholar = "https://scholar.google.com/citations?user=Fbvau5QAAAAJ&hl=en"
     linkedin = "https://www.linkedin.com/in/pavlo-kupyn"
     github = "https://github.com/PavloKupyn"
 
