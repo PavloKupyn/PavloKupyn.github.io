@@ -1,0 +1,20 @@
+{{- /* Side thumbnail(s) for an entry's "image" (from content/ or assets/); "image" may be one path or a list of paths,
+  stacked top to bottom. Expects dict "entry", "page", "widths" and "sizes". */ -}}
+{{- $images := slice -}}
+{{- range slice | append .entry.image -}}
+  {{- with or ($.page.Resources.GetMatch .) (resources.Get .) -}}
+    {{- $images = $images | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- with $images -}}
+<div class="cv-media">
+  {{- range . }}
+  {{ partial "responsive-image.html" (dict
+    "image" .
+    "alt" (or (index $.entry "imageAlt") (index $.entry "imagealt") "")
+    "widths" $.widths
+    "sizes" $.sizes
+  ) }}
+  {{- end }}
+</div>
+{{- end -}}

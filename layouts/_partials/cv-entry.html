@@ -1,0 +1,31 @@
+{{- /* One experience or volunteering entry. Expects dict "entry" (front matter item) and "page" (for image lookup). */ -}}
+{{- $entry := .entry -}}
+{{- $grouped := or $entry.positions (not $entry.role) -}}
+<li class="cv-item">
+  {{ partial "cv-image.html" (dict "entry" $entry "page" .page "widths" (slice 240 480) "sizes" "(min-width: 600px) 140px, 96px") }}
+  <div class="cv-body">
+    <div class="cv-item-head">
+      <h3 class="cv-title">{{ if $grouped }}{{ $entry.org }}{{ else }}{{ $entry.role }}{{ end }}</h3>
+      {{ with $entry.dates }}<p class="cv-dates">{{ . }}</p>{{ end }}
+    </div>
+    {{ if $grouped }}
+    {{ with $entry.location }}<p class="cv-meta">{{ . }}</p>{{ end }}
+    {{ else }}
+    <p class="cv-meta">{{ $entry.org }}{{ with $entry.location }} · {{ . }}{{ end }}</p>
+    {{ end }}
+    {{ with $entry.description }}<div class="cv-desc">{{ . | markdownify }}</div>{{ end }}
+    {{ with $entry.positions }}
+    <ul class="cv-positions">
+      {{ range . }}
+      <li>
+        <div class="cv-item-head">
+          <span class="cv-position-role">{{ .role }}</span>
+          {{ with .dates }}<span class="cv-dates">{{ . }}</span>{{ end }}
+        </div>
+        {{ with .description }}<div class="cv-desc">{{ . | markdownify }}</div>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</li>

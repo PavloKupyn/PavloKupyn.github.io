@@ -110,3 +110,62 @@
 .cv-desc li + li {
     margin-top: 0.25em;
 }
+
+/* Several roles grouped under one organization */
+.cv-positions {
+    margin: 0.75rem 0 0;
+    padding: 0 0 0 1rem;
+    list-style: none;
+    border-left: 2px solid var(--border);
+}
+
+.cv-positions > li + li {
+    margin-top: 0.6rem;
+}
+
+.cv-position-role {
+    color: var(--text);
+}
+
+.cv-positions .cv-desc {
+    margin-top: 0.1rem;
+    color: var(--muted);
+}
+
+/* Optional image beside an entry, kept at its own shape (never cropped) */
+.cv-item:has(> .cv-media) {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.cv-body {
+    min-width: 0;
+}
+
+/* Images sit vertically centered against the entry's text */
+.cv-media {
+    display: grid;
+    gap: 0.75rem;
+    align-self: center;
+}
+
+.cv-media img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    object-position: left top;
+}
+
+@media (min-width: 600px) {
+    .cv-item:has(> .cv-media) {
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .cv-pub:has(> .cv-media) {
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+}

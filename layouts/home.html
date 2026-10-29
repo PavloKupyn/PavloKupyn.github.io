@@ -9,15 +9,15 @@
       <header class="home-hero side-padding">
         <div class="home-hero-grid">
           <div class="home-hero-copy">
-            {{ with (.Params.eyebrow | default "" | strings.TrimSpace) }}<p class="hero-eyebrow">{{ . | markdownify }}</p>{{ end }}
+            <!-- {{ with (.Params.eyebrow | default "" | strings.TrimSpace) }}<p class="hero-eyebrow">{{ . | markdownify }}</p>{{ end }} -->
             {{ with .Title }}<h1 class="home-hero-title">{{ . | markdownify }}</h1>{{ end }}
             {{ with .Description }}<p class="home-hero-text">{{ . | markdownify }}</p>{{ end }}
             {{ if or $profile.jobtitle $profile.location }}
             <div class="hero-signals" role="group" aria-label="Author details">
-              {{ with $profile.jobtitle }}
-                {{ $briefcase := resources.Get "icons/briefcase.svg" }}
-                <span class="hero-signal">{{ with $briefcase }}<span class="hero-signal-icon" style="{{ printf "--signal-icon: url('%s');" .RelPermalink | safeCSS }}" aria-hidden="true"></span>{{ end }}{{ . }}</span>
-              {{ end }}
+              <!-- {{ with $profile.jobtitle }} -->
+                <!-- {{ $briefcase := resources.Get "icons/briefcase.svg" }} -->
+                <!-- <span class="hero-signal">{{ with $briefcase }}<span class="hero-signal-icon" style="{{ printf "--signal-icon: url('%s');" .RelPermalink | safeCSS }}" aria-hidden="true"></span>{{ end }}{{ . }}</span> -->
+              <!-- {{ end }} -->
               {{ with $profile.location }}
                 {{ $locationIcon := resources.Get "icons/map-marker-home.svg" }}
                 <span class="hero-signal">{{ with $locationIcon }}<span class="hero-signal-icon" style="{{ printf "--signal-icon: url('%s');" .RelPermalink | safeCSS }}" aria-hidden="true"></span>{{ end }}{{ . }}</span>
@@ -48,16 +48,7 @@
             <section id="experience" class="cv-block" aria-labelledby="experience-title">
               <h2 id="experience-title" class="cv-heading">Experience</h2>
               <ol class="cv-list">
-                {{ range . }}
-                <li class="cv-item">
-                  <div class="cv-item-head">
-                    <h3 class="cv-title">{{ .role }}</h3>
-                    {{ with .dates }}<p class="cv-dates">{{ . }}</p>{{ end }}
-                  </div>
-                  <p class="cv-meta">{{ .org }}{{ with .location }} · {{ . }}{{ end }}</p>
-                  {{ with .description }}<div class="cv-desc">{{ . | markdownify }}</div>{{ end }}
-                </li>
-                {{ end }}
+                {{ range . }}{{ partial "cv-entry.html" (dict "entry" . "page" $) }}{{ end }}
               </ol>
             </section>
             {{ end }}
@@ -66,12 +57,23 @@
               <h2 id="publications-title" class="cv-heading">Publications</h2>
               <ol class="cv-list">
                 {{ range . }}
-                <li class="cv-item">
-                  <h3 class="cv-title">{{ with .link }}<a href="{{ . }}">{{ end }}{{ .title }}{{ with .link }}</a>{{ end }}</h3>
-                  {{ with .authors }}<p class="cv-meta">{{ . | markdownify }}</p>{{ end }}
-                  {{ with .venue }}<p class="cv-venue">{{ . | markdownify }}</p>{{ end }}
+                <li class="cv-item cv-pub">
+                  {{ partial "cv-image.html" (dict "entry" . "page" $ "widths" (slice 400 800) "sizes" "(min-width: 600px) 200px, 96px") }}
+                  <div class="cv-body">
+                    <h3 class="cv-title">{{ with .link }}<a href="{{ . }}">{{ end }}{{ .title }}{{ with .link }}</a>{{ end }}</h3>
+                    {{ with .authors }}<p class="cv-meta">{{ . | markdownify }}</p>{{ end }}
+                    {{ with .venue }}<p class="cv-venue">{{ . | markdownify }}</p>{{ end }}
+                  </div>
                 </li>
                 {{ end }}
+              </ol>
+            </section>
+            {{ end }}
+            {{ with .Params.volunteering }}
+            <section id="volunteering" class="cv-block" aria-labelledby="volunteering-title">
+              <h2 id="volunteering-title" class="cv-heading">Volunteering &amp; Extracurricular</h2>
+              <ol class="cv-list">
+                {{ range . }}{{ partial "cv-entry.html" (dict "entry" . "page" $) }}{{ end }}
               </ol>
             </section>
             {{ end }}
