@@ -7,7 +7,7 @@ params:
     jobTitle: "Student research assistant, University of Bonn"
     location: "Bonn, Germany"
     email: "pkupyn@uni-bonn.de"
-    headshotImage: "images/pavlo.jpg"
+    headshotImage: "images/pavlo_alps.jpg"
     headshotAlt: ""
 
   experience:
