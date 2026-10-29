@@ -3,27 +3,20 @@ locale = "en-US"
 title = "Pavlo Kupyn"
 theme = "noesis"
 
-[pagination]
-  pagerSize = 10
+# Single-page site: no blog lists, categories or RSS feed
+disableKinds = ["taxonomy", "term", "RSS"]
 
 [params]
   brand = "Pavlo Kupyn"
-  description = "Personal website of Pavlo Kupyn"
-  mainSections = ["posts"]
-
-  [params.navigation]
-    rssInMenu = true
+  description = "Pavlo Kupyn, Master's student in Mobile Robotics at the University of Bonn, working on machine learning for robotics."
 
   [params.socials]
+    email = "pavlo.kupyn@uni-bonn.de"
+    linkedin = "https://www.linkedin.com/in/pavlo-kupyn"
     github = "https://github.com/PavloKupyn"
-    # linkedin = "https://www.linkedin.com/in/your-handle"
-    # email = "you@example.com"
 
   [params.author]
     name = "Pavlo Kupyn"
-    # jobTitle = ""
-    # location = ""
-
-[markup]
-  [markup.highlight]
-    style = "evergarden"
+    jobTitle = "Research Assistant"
+    worksFor = "University of Bonn"
+    location = "Bonn, Germany"

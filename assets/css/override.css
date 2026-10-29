@@ -1,0 +1,112 @@
+/* Experience and publications sections on the home page */
+
+.cv {
+    max-width: var(--max-reading);
+    color: var(--text-soft);
+    font-family: var(--font-ui);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.cv-block {
+    scroll-margin-top: 92px;
+}
+
+.cv-block + .cv-block {
+    margin-top: clamp(2.75rem, 6vw, 4rem);
+}
+
+.cv-heading {
+    position: relative;
+    margin: 0;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-display);
+    font-size: clamp(1.65rem, 2.4vw, 2rem);
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+.cv-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 3.25rem;
+    height: 2px;
+    background: var(--accent);
+}
+
+.cv-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cv-list > li + li {
+    margin-top: 0;
+}
+
+.cv-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cv-item-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+}
+
+.cv-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.cv-title a {
+    color: var(--accent-blue);
+    text-decoration-color: color-mix(in srgb, var(--accent-blue) 40%, transparent);
+}
+
+.cv-dates {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cv-meta,
+.cv-venue {
+    margin: 0.3rem 0 0;
+}
+
+.cv-meta strong {
+    color: var(--text);
+}
+
+.cv-venue {
+    color: var(--muted);
+    font-style: italic;
+}
+
+.cv-desc {
+    margin-top: 0.6rem;
+    font-size: 0.98rem;
+}
+
+.cv-desc p,
+.cv-desc ul {
+    margin: 0;
+}
+
+.cv-desc li + li {
+    margin-top: 0.25em;
+}
