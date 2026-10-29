@@ -1,0 +1,29 @@
+baseURL = "https://pavlokupyn.github.io/"
+locale = "en-US"
+title = "Pavlo Kupyn"
+theme = "noesis"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  brand = "Pavlo Kupyn"
+  description = "Personal website of Pavlo Kupyn"
+  mainSections = ["posts"]
+
+  [params.navigation]
+    rssInMenu = true
+
+  [params.socials]
+    github = "https://github.com/PavloKupyn"
+    # linkedin = "https://www.linkedin.com/in/your-handle"
+    # email = "you@example.com"
+
+  [params.author]
+    name = "Pavlo Kupyn"
+    # jobTitle = ""
+    # location = ""
+
+[markup]
+  [markup.highlight]
+    style = "evergarden"

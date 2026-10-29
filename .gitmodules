@@ -1,0 +1,3 @@
+[submodule "themes/noesis"]
+	path = themes/noesis
+	url = https://github.com/josephhutch/noesis.git
