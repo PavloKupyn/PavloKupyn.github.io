@@ -46,6 +46,7 @@ params:
     - title: "Benchmarking Real-World Robotic Manipulation through Stochastic Challenges"
       authors: "E Gläßer, G Şikaroğlu, **P Kupyn**, M Pollefeys, Z Bauer, H Blum"
       venue: "Conference on Robot Learning (CoRL), 2026"
+      link: "https://openreview.net/pdf/261e738efb656b27519400c654d126556cf7fc13.pdf"
       # image: "images/placeholder.jpg"
 
     - title: "Efficient Transfer Learning of Robot Dynamic Models Using Morphological Similarity"
@@ -56,7 +57,7 @@ params:
 
     - title: "Physics-Guided Neural Networks for Motion Estimation of an Underwater Vehicle with a Complex Propulsion System"
       authors: "Y Hamamatsu, **P Kupyn**, E Friedl, A Ristolainen, M Kruusmaa"
-      venue: "International Journal of Naval Architecture and Ocean Engineering"
+      venue: "International Journal of Naval Architecture and Ocean Engineering, 2026"
       # image: "images/placeholder.jpg"
       link: "https://doi.org/10.1016/j.ijnaoe.2026.100802"
 
