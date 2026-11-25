@@ -16,7 +16,8 @@ params:
       location: "Bonn, Germany"
       dates: "03/2026 – Present"
       description: "I am working with mobile manipulators. Developing control, perception and reasoning modules for autonomous operation of robots in home environments."
-      image: "images/spot_gif.gif"
+      image:
+        - "images/spot_gif.gif"
 
     - org: "Centre for Biorobotics, TalTech"
       location: "Tallinn, Estonia"
